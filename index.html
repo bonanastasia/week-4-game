@@ -1,1 +1,313 @@
-HELLO!
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Crystal collector</title>
+
+  <!-- Bootstrap File -->
+<!--   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
+
+  <!-- JQuery -->
+<!--  <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+
+
+<body> --> 
+
+  <!-- Overall Bootstrap Grid -->
+<!--   <div class="container"> -->
+
+    <!-- Jumbotron with Title -->
+   <!--  <div class="jumbotron">
+      <h1 class="text-center"><strong>Crystal Collector!</strong></h1> -->
+
+   <!--  </div> -->
+
+    <!-- <div class="row"> -->
+
+      <!-- Left Panel -->
+      <!-- <div class="col-lg-6"> -->
+
+        <!-- instructions-->
+  <!--       <div class="instructions">
+        	<p>instrutions for game....... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus doloribus dolore fuga similique rerum nobis possimus veniam corporis sit iusto, magnam, amet ipsum eum cumque praesentium omnis commodi odio perspiciatis.</p>
+        	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia necessitatibus impedit, quaerat, eaque debitis veniam laudantium voluptas eum eligendi at praesentium! Maiores possimus deleniti recusandae qui sapiente pariatur optio enim.</p>
+
+        </div>
+      </div>
+    </div>  
+ -->
+        <!-- shows number to match -->
+   <!--  <div class= "random"> -->
+
+
+<!--  
+    </div> 
+
+	    tracks win/losses
+
+	<div class="panel-body">
+	            
+	<p>wins: <span class="insert-wins">0</span></p>
+
+	<p>losses: <span class="insert-losses">0</span></p>
+	              
+	</div>
+	  
+
+        <!-- crystal buttons -->
+   <!-- <div class="buttons">
+   		<button id="button-1" class="btn btn-primary number" value="1"><h1>1</h1></button>
+        <button id="button-2" class="btn btn-primary number" value="2"><h1>2</h1></button>
+        <button id="button-3" class="btn btn-primary number" value="3"><h1>3</h1></button>
+        <button id="button-3" class="btn btn-primary number" value="3"><h1>3</h1></button>
+
+	</div>
+ -->
+   	<!-- <div class= "current-score-text">
+    	<div class="col-lg-3">  
+	      <p>Your current score is:</p>
+	            
+	   	</div>
+	</div>  -->
+
+       <!-- shows current added user score-->
+   <!--  <div class= "current-score">
+	   <span class="insert-random">0</span>
+	</div> 
+
+	<h1 class="text-center" id="random-number"></h1> -->
+<!-- jquery link -->
+<!-- <script type="text/javascript"> -->
+	
+	
+	<!-- var button1Value = "";
+
+	 $(document).ready(function() {
+	//  	var randomNumber = "";
+	 	
+	//  	function getRand(){
+	// 	randomNumber= Math.floor(Math.random() * (120 - 19)) + 19;
+	// 	return randomNumber;
+	// 	$("#random").append(randomNumber);
+	// };
+
+	
+getRand();
+
+     $("#button-1").on("click", function() {
+        var randomNumber= Math.floor(Math.random()*12)+1;
+        $("#random-number").append(randomNumber);
+
+      });
+
+
+
+});
+
+
+</script>
+
+     
+
+</body>
+</html> -->
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trigger Random</title>
+
+  <!-- Added link to the jQuery Library -->
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+  <!-- Added a link to Bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <!-- link css -->
+
+  <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body>
+
+  <div class="jumbotron">
+
+    <h1 class="text-center">Crystal Collector</h1>
+
+    <div class="text-center">
+
+      <!-- Here we have our button for generating random numbers (#random-button) -->
+      <input class="buttons" id="button-1" type="image" src="assets/images/pink_gem.png"></input>
+
+      <input class="buttons" id="button-2" type="image" src="assets/images/blue_gem.png"></input>
+
+      <input class="buttons" id="button-3" type="image" src="assets/images/green_gem.png"></input>
+
+      <input class="buttons" id="button-4" type="image" src="assets/images/orange_gem.png"></input>
+      
+    </div>
+
+  </div>
+
+  <!-- Here we have div called "random-number" where our random number will go -->
+  <h1 class="text-center" id="random-number"></h1>
+
+  <h1 class="text-center" id="user-score">this is the userscore</h1>
+
+  <div class="panel-body">
+	            
+	<p>wins: <span class="insert-wins">0</span></p>
+
+	<p>losses: <span class="insert-losses">0</span></p>
+	              
+	</div>
+
+  <script type="text/javascript">
+
+  	userScore=0;
+  	win=0;
+  	losses=0;
+  	winChecker=true;
+  	var randNumGen=function() {
+      	randomNumber= Math.floor(Math.random() * (120 - 19)) + 19;
+        $("#random-number").html(randomNumber);
+    	};
+    	
+    var button1Value=function() {
+      	buttonNumber1= Math.floor(Math.random() * 12) + 1;
+        $("#button-1").val(buttonNumber1);
+    	};
+
+    	
+
+    var button2Value=function() {
+      	buttonNumber2= Math.floor(Math.random() * 12) + 1;
+        $("#button-2").val(buttonNumber2);
+    	};
+
+    	
+
+     var button3Value=function() {
+      	buttonNumber3= Math.floor(Math.random() * 12) + 1;
+        $("#button-3").val(buttonNumber3);
+    	};
+
+    
+
+      var button4Value=function() {
+      	buttonNumber4= Math.floor(Math.random() * 12) + 1;
+        $("#button-4").val(buttonNumber4);
+    	};
+
+    
+
+
+    $(document).ready(function() {
+
+      // CREATE THE MISSING CODE HERE. Your code should add content to the random-number div.
+      // ...
+
+      var randNumGen=function() {
+      	randomNumber= Math.floor(Math.random() * (120 - 19)) + 19;
+        $("#random-number").html(randomNumber);
+    	};
+    	randNumGen();
+
+     var button1Value=function() {
+      	buttonNumber1= Math.floor(Math.random() * 12) + 1;
+        $("#button-1").val(buttonNumber1);
+    	};
+
+    	button1Value();
+
+    var button2Value=function() {
+      	buttonNumber2= Math.floor(Math.random() * 12) + 1;
+        $("#button-2").val(buttonNumber2);
+    	};
+
+    	button2Value();
+
+     var button3Value=function() {
+      	buttonNumber3= Math.floor(Math.random() * 12) + 1;
+        $("#button-3").val(buttonNumber3);
+    	};
+
+    	button3Value();
+
+      var button4Value=function() {
+      	buttonNumber4= Math.floor(Math.random() * 12) + 1;
+        $("#button-4").val(buttonNumber4);
+    	};
+
+    	button4Value();
+    
+
+     var scoreAddChecker= function(buttonNumberX){
+     	if(parseInt(userScore)===randomNumber){
+        	randNumGen();
+        	userScore=0;
+        	win++;
+        	button1Value();
+        	button2Value();
+        	button3Value();
+        	button4Value();
+        	$(".insert-wins").html(win);
+        	$("#user-score").empty();
+        	
+        }else if( parseInt(userScore)>randomNumber ){
+        	randNumGen();
+        	userScore=0;
+        	losses++;
+        	button1Value();
+        	button2Value();
+        	button3Value();
+        	button4Value();
+        	$(".insert-losses").html(losses);
+        	$("#user-score").empty();
+        	
+
+        }else{
+        	$("#user-score").html(userScore += buttonNumberX)
+        	if(parseInt(userScore)>randomNumber){
+        		losses++;
+
+        };
+
+     };
+   };
+
+      
+
+    // onclick, add value to userScore. Check to see if win/loss
+       
+       $("#button-1").on("click", function() {
+        
+      	scoreAddChecker(buttonNumber1);
+
+      });
+
+        $("#button-2").on("click", function() {
+        
+         scoreAddChecker(buttonNumber2);
+      });
+
+     $("#button-3").on("click", function() {
+        
+          scoreAddChecker(buttonNumber3);
+       });
+	$("#button-4").on("click", function() {
+	        
+	       scoreAddChecker(buttonNumber4);
+	       });
+
+     
+
+ });
+
+      // ...
+
+
+  </script>
+  
+</body>
+</html>
